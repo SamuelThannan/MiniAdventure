@@ -37,10 +37,9 @@ namespace MiniAdventure
                 return;
             }
 
-                //Console.WriteLine($"{playerGold}");
-                //Console.WriteLine($"{name}");
+               
 
-                bool running = true;
+            bool running = true;
             while (running)
             {
                 Console.Clear();

@@ -17,12 +17,14 @@ namespace MiniAdventure
             int rng = random.Next(enemies.Length);
             Enemy enemy = enemies[rng];
 
-
+            
             Console.WriteLine($"You encountered {enemy.Name}!");
 
             while(player.Health > 0 && enemy.StartHP > 0)
             {
-                Console.WriteLine($"HP: {player.Health} - {enemy.Name} HP: {enemy.StartHP}");
+                Console.Clear();
+                Console.WriteLine($"==== {enemy.Name} ====");
+                Console.WriteLine($"HP: {player.Health} |||| {enemy.Name} HP: {enemy.StartHP}");
                 Console.WriteLine($"==Pick action==\n[1] Attack\n[2] Heal\n[3] Run");
                 int choice = int.Parse(Console.ReadLine());
 
@@ -30,11 +32,13 @@ namespace MiniAdventure
                 {
                     enemy.StartHP -= player.Damage;
                     Console.WriteLine($"You did {player.Damage} dmg to {enemy.Name}.");
+                    
                 }
                 else if (choice == 2)
                 {
                     player.Health += player.HealPower;
                     Console.WriteLine($"You healed for {player.HealPower} hp.");
+                    
                 }
                 else if(choice == 3)
                 {
@@ -45,12 +49,16 @@ namespace MiniAdventure
                 else
                 {
                     Console.WriteLine("Invalid option, choose between 1, 2 and 3");
+                    Console.WriteLine("Press any key to continue.");
+                    Console.ReadKey();
                     continue;
                 }
                 if (enemy.StartHP > 0)
                 {
                     player.Health -= enemy.Damage;
                     Console.WriteLine($"You took {enemy.Damage} dmg.");
+                    Console.WriteLine("Press any key to continue.");
+                    Console.ReadKey();
                 }
 
             }

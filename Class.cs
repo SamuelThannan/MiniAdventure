@@ -18,7 +18,7 @@ namespace MiniAdventure
     {
         public Warrior()
         {
-            //string name;
+            
             Class = "Warrior";
             Health = 100;
             MaxHP = 100;
@@ -33,7 +33,7 @@ namespace MiniAdventure
     {
         public Mage()
         {
-            //string name;
+            
             Class = "Mage";
             Health = 80;
             MaxHP = 80;
